@@ -1,7 +1,13 @@
 class ContactsController < ApplicationController
   def first
     first_contact = Contact.first
-    render json: { message: "hello" }
+    contact = Contact.find_by(id: 1)
+    render json: {
+      id: contact.id
+      first_name: contact.first_name
+      last_name: contact.last_name
+      phone_number: contact.phone_number
+  }
   end
 
   def show
@@ -11,6 +17,8 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = Contact.all 
-    render "contacts/index"
+    render template: "contacts/index"
   end
+
+  
 end 
