@@ -5,8 +5,8 @@ class ContactsController < ApplicationController
   end
 
   def show
-    @contact = Contact.find(params[:id])
-    render "contacts/show"
+    @contact = Contact.find_by(id: 1)
+    render template: "contacts/show"
   end
 
   def all
