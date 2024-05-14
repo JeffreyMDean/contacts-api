@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "/show_contact" => "contacts#first"
   get "/all_contacts" => "contacts#all"
+  get "/one_contact" => "contacts#show"
 end
